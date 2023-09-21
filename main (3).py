@@ -1,7 +1,31 @@
-year=2000
-if(year%400==0)and(year%100==0):
-  print("{0} is a leap year".format(year))
-elif (year%4==0) and (year%100!=0):
-  print("{0} ia aleap year".format(year))
-else:
-  print("{0} is not a leap year".format(year))
+
+class Bank_Account:
+    def _init_(self):
+        self.balance=0
+        print("Hello!!! Welcome to the Deposit & Withdrawal Machine")
+ 
+    def deposit(self):
+        amount=float(input("Enter amount to be Deposited: "))
+        self.balance += amount
+        print("\n Amount Deposited:",amount)
+ 
+    def withdraw(self):
+        amount = float(input("Enter amount to be Withdrawn: "))
+        if self.balance>=amount:
+            self.balance-=amount
+            print("\n You Withdrew:", amount)
+        else:
+            print("\n Insufficient balance  ")
+ 
+    def display(self):
+        print("\n Net Available Balance=",self.balance)
+ 
+# Driver code
+  
+# creating an object of class
+s = Bank_Account()
+  
+# Calling functions with that class object
+s.deposit()
+s.withdraw()
+s.display()
